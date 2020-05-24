@@ -1,4 +1,16 @@
 <!-- 头部 start -->
+<script>
+    $(function () {   //入口函数  当页面加载完成之后，就发送一个ajax异步请求 $.get();
+
+        $.get("findUserServlet",{},function (data) {   //返回一个user对象
+            // 响应数据的格式：{uid :1,name:'张三'}
+            var msg = "欢迎回来，"+data.name;
+            $("#span_username").html(msg);
+        });
+
+    });
+
+</script>
     <header id="header">
         <div class="top_banner">
             <img src="images/top_banner.jpg" alt="">
@@ -11,10 +23,9 @@
             </div>
             <!-- 登录状态  -->
             <div class="login">
-            	
-                <span>欢迎回来，admin</span>
+                <span id="span_username"></span>
                 <a href="myfavorite.html" class="collection">我的收藏</a>
-                <a href="javascript:;">退出</a>
+                <a href="javascript:location.href='/travel2/exitServlet';">退出</a>
             </div>
         </div>
         <div class="header_wrap">

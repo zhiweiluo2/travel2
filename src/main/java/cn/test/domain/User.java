@@ -5,7 +5,7 @@ import java.io.Serializable;
 /**
  * 用户实体类
  */
-public class User implements Serializable {
+public class User implements Serializable {   //serializeable序列化
     private int uid;//用户id
     private String username;//用户名，账号
     private String password;//密码
@@ -15,7 +15,7 @@ public class User implements Serializable {
     private String telephone;//手机号
     private String email;//邮箱
     private String status;//激活状态，Y代表激活，N代表未激活
-    private String code;//激活码（要求唯一）
+    private String code;//激活码（要求唯一）  判断是谁点击激活，用户的唯一标识
 
     /**
      * 无参构造方法

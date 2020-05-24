@@ -11,7 +11,7 @@
 		<script>
 			/*
 				表单校验
-					1、用户名：单词字符，长度8到20
+					1、用户名：单词字符，长度6到20
 					2、密码：单词字符，长度8到20
 					3、email: 邮件格式（正则表达式）
 					4、姓名：非空
@@ -129,7 +129,7 @@
 				return flag;
 			}
 
-			//检验出生日期
+			//检验验证码
 			function checkCheck(){
 				//1、获取姓名
 				var check = $("#check").val();
@@ -151,6 +151,7 @@
 
 				//当表单提交时，调用所有的检验方法
 				$("#registerForm").submit(function () {  //匿名方法
+
 					//发送数据到服务器端   发数据 与 不发数据，肯定依赖于校验结果
 					if (checkUsername()&& checkPassword()&& checkEmail()){
 						//校验通过，发送ajax请求，提交表单的数据   .serialize() 提交 键值对 类型的数据 给服务器
